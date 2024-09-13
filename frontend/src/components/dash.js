@@ -543,7 +543,9 @@ function Displayimg({ setalllike,curpuz,user,setwhere, setquitting, UserSocket, 
         const shelfdisplay = shelf.map((data, index) => {
             const imagedisplay = data.map((subdata, subindex) => {
                 if (index == shelf.length - 1 && subindex == data.length - 1) {
-                    document.getElementById("loading").style.display = "none";
+                    setTimeout(() => {
+                        document.getElementById("loading").style.display = "none";
+                    }, 500)
                 }
                 if (curcontent == 3 && subdata == 'extra') {
                     var height = 1.5
@@ -1550,7 +1552,9 @@ function Userpage({ userid, display, setdisplay, displaypage, setdisplaypage, se
             
             //if no puzzle is retrived, out put a message on screen and update the sort list, 
             if (data == false) {
-                document.getElementById("loading").style.display = "none";
+                setTimeout(() => {
+                    document.getElementById("loading").style.display = "none";
+                }, 500)
                 if (update == 2) {
                     setnopuz(true)
                     setnoreturnline('No puzzle matches your search')
